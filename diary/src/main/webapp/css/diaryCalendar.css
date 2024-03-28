@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+* {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibm-plex-400 {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibm-plex-500 {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.ibm-plex-600 {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: cetner;
+}
+
+.btnGroup {
+    display: flex;
+    align-items: center;
+    justify-content: cetner;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: cetner;
+}
+
+.actionBtn button {
+    width: 150px;
+    height: 30px;
+    background-color: rgba(174, 208, 156, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.actionBtn button:hover {
+    background-color: rgba(174, 208, 156, 1);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.actionBtn .logoutBtn {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.actionBtn .logoutBtn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.modeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: cetner;
+}
+
+.modeBtn button {
+    width: 150px;
+    height: 30px;
+    background-color: rgba(174, 208, 156, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.modeBtn button:hover {
+    background-color: rgba(174, 208, 156, 1);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.modeBtn .logoutBtn {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modeBtn .logoutBtn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.calendar-title-box {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-title {
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.calendarBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarArrow a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0px 50px;
+}
+
+.yo {
+    float: left;
+    width: 100px;
+    height: 30px;
+    border-radius: 7px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-box {
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 7px;
+    margin: 5px 3px;
+}
+
+.date-blank {
+    background-color: rgba(174, 208, 156, 0.3);
+}
+
+.date {
+    background-color: rgba(174, 208, 156, 1);
+}
+
+.th-seven {
+    clear: both;
+    color: #FF0000;
+}
+
+.th-six {
+    color: #0000FF;
+}
+
+.in-date {
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.today {
+    background-image: url(/diary/img/pika.png);
+    background-size: 150px;
+}
+
+.diaryBall {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url(/diary/img/pokeball.png);
+    background-size: cover;
+}
+
+.diaryBall:hover {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-image: url(/diary/img/pokeball.png);
+    background-size: cover;
+}
+
+.feeling {
+    font-size: 26px;
+}

@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+* {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+}
+
+a:link {
+   color: rgba(0, 0, 0, 0.5) 
+}
+
+a:visited {
+   color: rgba(0, 0, 0, 0.5) 
+}
+
+.ibm-plex-400 {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibm-plex-500 {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.ibm-plex-600 {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: cetner;
+}
+
+.btnGroup {
+    display: flex;
+    align-items: center;
+    justify-content: cetner;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: cetner;
+}
+
+.actionBtn button {
+    width: 150px;
+    height: 30px;
+    background-color: rgba(174, 208, 156, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.actionBtn button:hover {
+    background-color: rgba(174, 208, 156, 1);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.actionBtn .logoutBtn {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.actionBtn .logoutBtn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.modeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: cetner;
+}
+
+.modeBtn button {
+    width: 150px;
+    height: 30px;
+    background-color: rgba(174, 208, 156, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.modeBtn button:hover {
+    background-color: rgba(174, 208, 156, 1);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.modeBtn .logoutBtn {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modeBtn .logoutBtn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.diary-title-box {
+    display: flex;
+    align-items: center;
+}
+
+.diary-title {
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.diaryBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInput {
+    margin-top: 10px;
+}
+
+.searchInput input {
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    background-color : rgba( 230, 230, 230, 0.5);
+    border: none;
+    border-radius: 20px;
+    margin: 7px 0;
+    padding-left: 16px;
+}
+
+.searchInput input::placeholder {
+    font-size: 14px;
+}
+
+.searchBtnGroup {
+    width: 316px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchInput button {
+    width: 155px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+}
+
+.searchButton {
+    background-color: rgba(174, 208, 156, 0.7);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 20px;
+}
+
+.resetButton {
+    background-color: rgba(230, 230, 230, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 20px;
+}
+
+.searchButton:hover {
+    background-color: rgba(174, 208, 156, 1);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 20px;
+}
+
+.resetButton:hover {
+    background-color: rgba(230, 230, 230, 1);
+    color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 20px;
+}
+
+.diaryListContent {
+    width: 284px;
+    height: 16px;
+    border: 1px solid rgba(174, 208, 156, 0.7);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 16px;
+}
+
+.contentDate {
+    color: rgba(174, 208, 156, 1);
+    margin-right: 10px;
+}
+
+.feeling {
+    font-size: 16px;
+}
+
+.contentTitle {
+    margin-left: 10px;
+}
+
+.diaryListPaging {
+    display: flex;
+}
+
+.pagingBtn {
+    margin: 0px 5px 0px 5px;
+}
