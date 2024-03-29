@@ -37,7 +37,6 @@
                     <%
                         if (diaryOneRs.next()) {
                             String feeling = diaryOneRs.getString("feeling");
-                            System.out.println("feeling : " + feeling);
                             String title = diaryOneRs.getString("title");
                             String weather = diaryOneRs.getString("weather");
                             String content = diaryOneRs.getString("content");

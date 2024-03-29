@@ -24,6 +24,10 @@
     font-style: normal;
 }
 
+input:focus, textarea:focus {
+    outline: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -36,6 +40,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+    display: flex;
 }
 
 .diaryOneContentBox {
@@ -43,6 +49,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.diaryOneCommentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .diaryOneTableName {
@@ -97,8 +110,49 @@
     justify-content: start;
 }
 
+.diaryOneComment textarea {
+    width: 284px;
+    height: 28px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba( 230, 230, 230, 1);
+    border-radius: 20px;
+    padding: 16px;
+    resize: none;
+}
+
+.diaryOneCommentOne {
+    width: 284px;
+    height: 60px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba( 230, 230, 230, 1);
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 10px;
+}
+
+.commentOneHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.commentOneHeader button {
+    width: 40px;
+    height: 18px;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .diaryOneBtnBox {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -110,6 +164,26 @@
     border-radius: 20px;
     border: none;
     margin: 10px 5px 10px 5px;
+}
+
+.diaryOneCommentBtnBox button {
+    height: 40px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 16px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diaryOneActionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .diaryOneEditBtn button {
@@ -126,4 +200,10 @@
     width: 316px;
     background-color: rgba(230, 230, 230, 0.5);
     color: rgba(0, 0, 0, 0.7);
+}
+
+.diaryOneCommentBtn button {
+    width: 316px;
+    background-color: rgba(174, 208, 156, 1);
+    color: #FFFFFF;
 }

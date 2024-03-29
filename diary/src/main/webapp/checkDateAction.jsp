@@ -4,7 +4,7 @@
 
 <%
     String checkDate = request.getParameter("checkDate");
-    System.out.println("<checkDateAction.jsp> checkDate : " + checkDate);
+    // System.out.println("<checkDateAction.jsp> checkDate : " + checkDate);
     
     PreparedStatement checkDateStmt = null;
     ResultSet checkDateRs = null;
