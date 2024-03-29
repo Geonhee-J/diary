@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/* 폰트 설정 */
+
 * {
     font-family: "IBM Plex Sans KR", sans-serif;
     font-weight: 400;
@@ -24,6 +26,8 @@
     font-style: normal;
 }
 
+/* 정렬 */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -31,19 +35,21 @@
     justify-content: cetner;
 }
 
-.btnGroup {
+/* 버튼 */
+
+.headerBtnBox {
     display: flex;
     align-items: center;
     justify-content: cetner;
 }
 
-.actionBtn {
+.headerBtn {
     display: flex;
     align-items: center;
     justify-content: cetner;
 }
 
-.actionBtn button {
+.headerBtn button {
     width: 150px;
     height: 30px;
     background-color: rgba(174, 208, 156, 0.5);
@@ -53,56 +59,37 @@
     margin: 10px;
 }
 
-.actionBtn button:hover {
+.headerBtn button:hover {
     background-color: rgba(174, 208, 156, 1);
     color: rgba(0, 0, 0, 0.8);
 }
 
-.actionBtn .logoutBtn {
+.headerBtn .logoutBtn {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.actionBtn .logoutBtn:hover {
+.headerBtn .logoutBtn:hover {
     background-color: rgba(0, 0, 0, 0.4);
     color: rgba(255, 255, 255, 0.8);
 }
 
-.modeBtn {
-    display: flex;
-    align-items: center;
-    justify-content: cetner;
-}
-
-.modeBtn button {
-    width: 150px;
-    height: 30px;
-    background-color: rgba(174, 208, 156, 0.5);
-    color: rgba(0, 0, 0, 0.5);
-    border: none;
-    border-radius: 15px;
-    margin: 10px;
-}
-
-.modeBtn button:hover {
-    background-color: rgba(174, 208, 156, 1);
-    color: rgba(0, 0, 0, 0.8);
-}
-
-.modeBtn .logoutBtn {
+.headerBtn .viewBtn {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.modeBtn .logoutBtn:hover {
+.headerBtn .viewBtn:hover {
     background-color: rgba(0, 0, 0, 0.4);
     color: rgba(255, 255, 255, 0.8);
 }
 
-.calendar-title-box {
+/* 달력 */
+
+.calendarTitleBox {
     display: flex;
     align-items: center;
 }
 
-.calendar-title {
+.calendarTitle {
     font-size: 42px;
     font-weight: 500;
 }
@@ -130,7 +117,7 @@
     justify-content: center;
 }
 
-.date-box {
+.dateBox {
     float: left;
     width: 100px;
     height: 100px;
@@ -138,7 +125,7 @@
     margin: 5px 3px;
 }
 
-.date-blank {
+.dateBlank {
     background-color: rgba(174, 208, 156, 0.3);
 }
 

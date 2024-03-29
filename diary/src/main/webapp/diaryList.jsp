@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../include/sessionCheck.jsp"%>
+<%@ include file="../include/loginOn.jsp"%>
+<%@ include file="../include/jdbcConn.jsp"%>
 <%@ include file="../include/calendar.jsp"%>
 <%@ include file="../include/fonts.jsp"%>
 
@@ -29,7 +30,7 @@
     PreparedStatement searchStmt = null;
     ResultSet searchRs = null;
     
-    searchStmt = sessionCheckConn.prepareStatement(searchSQL);
+    searchStmt = jdbcConn.prepareStatement(searchSQL);
     searchStmt.setString(1, "%" + searchWord + "%");
     searchStmt.setInt(2, startRow);
     searchStmt.setInt(3, rowPerPage);
@@ -39,7 +40,7 @@
     
     PreparedStatement totalRowStmt = null;
     ResultSet totalRowRs = null;
-    totalRowStmt = sessionCheckConn.prepareStatement(totalRowCountSQL);
+    totalRowStmt = jdbcConn.prepareStatement(totalRowCountSQL);
     totalRowRs = totalRowStmt.executeQuery();
     
     if (totalRowRs.next()) {
@@ -105,7 +106,7 @@
                                 <span class="feeling"><%=feeling%></span>
                             </div>
                             <div class="contentTitle">
-                                <a href="/diary/diaryOne2.jsp?diaryDate=<%=diaryDate%>"> <%=title%>
+                                <a href="/diary/diaryOne.jsp?diaryDate=<%=diaryDate%>"> <%=title%>
                                 </a>
                             </div>
                         </div>

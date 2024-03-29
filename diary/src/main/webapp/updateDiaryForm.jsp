@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../include/sessionCheck.jsp"%>
+<%@ include file="../include/loginOn.jsp"%>
+<%@ include file="../include/jdbcConn.jsp"%>
 <%@ include file="../include/fonts.jsp"%>
 
 <%
@@ -11,7 +12,7 @@
     String diarySelectSQL =
             "SELECT diary_date, feeling, title, weather, content, update_date, create_date FROM diary_content WHERE diary_date = ?";
     
-    diaryOneStmt = sessionCheckConn.prepareStatement(diarySelectSQL);
+    diaryOneStmt = jdbcConn.prepareStatement(diarySelectSQL);
     diaryOneStmt.setString(1, diaryDate);
     diaryOneRs = diaryOneStmt.executeQuery();
 %>
@@ -36,6 +37,7 @@
                     <%
                         if (diaryOneRs.next()) {
                             String feeling = diaryOneRs.getString("feeling");
+                            System.out.println("feeling : " + feeling);
                             String title = diaryOneRs.getString("title");
                             String weather = diaryOneRs.getString("weather");
                             String content = diaryOneRs.getString("content");
@@ -46,8 +48,8 @@
                             <div class="updateDiaryInputMood">
                                 <div class="moodBox">
                                     <%
-                                        if (feeling.equals("&#128525;")) {
-                                            %>
+                                        if (feeling.equals("&#128525;") || feeling.equals("😍")) {
+                                    %>
                                                 <div class="mood">
                                                     <label for="1">&#128525;</label>
                                                     <input type="radio" name="feeling" id="1" value="&#128525;" checked="checked">
@@ -68,9 +70,9 @@
                                                     <label for="5">&#128545;</label>
                                                     <input type="radio" name="feeling" id="5" value="&#128545;">
                                                 </div>
-                                            <%
-                                        } else if (feeling.equals("&#128515;")) {
-                                            %>
+                                    <%
+                                        } else if (feeling.equals("&#128515;") || feeling.equals("😃")) {
+                                    %>
                                                 <div class="mood">
                                                     <label for="1">&#128525;</label>
                                                     <input type="radio" name="feeling" id="1" value="&#128525;">
@@ -91,9 +93,9 @@
                                                     <label for="5">&#128545;</label>
                                                     <input type="radio" name="feeling" id="5" value="&#128545;">
                                                 </div>
-                                            <%
-                                        } else if (feeling.equals("&#128528;")) {
-                                            %>
+                                    <%
+                                        } else if (feeling.equals("&#128528;") || feeling.equals("😐")) {
+                                    %>
                                                 <div class="mood">
                                                     <label for="1">&#128525;</label>
                                                     <input type="radio" name="feeling" id="1" value="&#128525;">
@@ -114,9 +116,9 @@
                                                     <label for="5">&#128545;</label>
                                                     <input type="radio" name="feeling" id="5" value="&#128545;">
                                                 </div>
-                                            <%
-                                        } else if (feeling.equals("&#128557;")) {
-                                            %>
+                                    <%
+                                        } else if (feeling.equals("&#128557;") || feeling.equals("😭")) {
+                                    %>
                                                 <div class="mood">
                                                     <label for="1">&#128525;</label>
                                                     <input type="radio" name="feeling" id="1" value="&#128525;">
@@ -137,9 +139,9 @@
                                                     <label for="5">&#128545;</label>
                                                     <input type="radio" name="feeling" id="5" value="&#128545;">
                                                 </div>
-                                            <%
-                                        } else {
-                                            %>
+                                    <%
+                                        } else if (feeling.equals("&#128545;") || feeling.equals("😡")) {
+                                    %>
                                                 <div class="mood">
                                                     <label for="1">&#128525;</label>
                                                     <input type="radio" name="feeling" id="1" value="&#128525;">
@@ -160,7 +162,7 @@
                                                     <label for="5">&#128545;</label>
                                                     <input type="radio" name="feeling" id="5" value="&#128545;" checked="checked">
                                                 </div>
-                                            <%
+                                    <%
                                         }
                                     %>
                                 </div>
@@ -238,7 +240,7 @@
 
 <%
     // DB자원 반납
-    sessionCheckRs.close();
-    sessionCheckStmt.close();
-    sessionCheckConn.close();
+    diaryOneRs.close();
+    diaryOneStmt.close();
+    jdbcConn.close();
 %>

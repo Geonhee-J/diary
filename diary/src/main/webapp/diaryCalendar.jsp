@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../include/sessionCheck.jsp"%>
+<%@ include file="../include/loginOn.jsp"%>
+<%@ include file="../include/jdbcConn.jsp"%>
 <%@ include file="../include/calendar.jsp"%>
 <%@ include file="../include/fonts.jsp"%>
 
@@ -10,7 +11,7 @@
     PreparedStatement diaryExtractStmt = null;
     ResultSet diaryExtractRs = null;
     
-    diaryExtractStmt = sessionCheckConn.prepareStatement(inquireDateSQL);
+    diaryExtractStmt = jdbcConn.prepareStatement(inquireDateSQL);
     diaryExtractStmt.setInt(1, tYear);
     diaryExtractStmt.setInt(2, tMonth + 1);
     diaryExtractRs = diaryExtractStmt.executeQuery();
@@ -25,31 +26,30 @@
 </head>
 <body>
     <div class="container">
-        <div class="btnGroup">
-            <div class="actionBtn">
-                <form method="post" action="/diary/logoutAction.jsp">
-                    <input type="hidden" name="logout" value="true">
+        <div class="headerBtnBox">
+            <div class="headerBtn">
+                <form method="post" action="/diary/include/logout.jsp">
                     <button class="logoutBtn" type="submit">로그아웃</button>
                 </form>
                 <form method="post" action="/diary/addDiaryForm.jsp">
                     <button type="submit">일기쓰기</button>
                 </form>
                 <form method="post" action="/diary/diaryCalendar.jsp">
-                    <button class="logoutBtn" type="submit">달력으로보기</button>
+                    <button class="viewBtn" type="submit">달력으로보기</button>
                 </form>
                 <form method="post" action="/diary/diaryList.jsp">
                     <button type="submit">리스트로보기</button>
                 </form>
                 <form method="post" action="/diary/lunchOne.jsp">
-                    <button class="logoutBtn" type="submit">점심메뉴투표</button>
+                    <button type="submit">점심메뉴투표</button>
                 </form>
                 <form method="post" action="/diary/statsLunch.jsp">
                     <button type="submit">점심메뉴통계</button>
                 </form>
             </div>
         </div>
-        <div class="calendar-title-box">
-            <div class="calendar-title">
+        <div class="calendarTitleBox">
+            <div class="calendarTitle">
                 <%=tYear%>년
                 <%=tMonth + 1%>월
             </div>
@@ -95,7 +95,7 @@
                             if (sunday) {
                                 if (monthDate) {
                                     %>
-                                        <div class="date-box date th-seven today">
+                                        <div class="dateBox date th-seven today">
                                             <div class="in-date">
                                                 <%=todayDate%>
                                                 <%
@@ -118,13 +118,13 @@
                                     <%
                                 } else if (blank) {
                                     %>
-                                        <div class="date-box date-blank th-seven"></div>
+                                        <div class="dateBox dateBlank th-seven"></div>
                                     <%
                                 }
                             } else if (saturday) {
                                 if (monthDate) {
                                     %>
-                                        <div class="date-box date th-six today">
+                                        <div class="dateBox date th-six today">
                                             <div class="in-date">
                                                 <%=todayDate%>
                                                 <%
@@ -147,13 +147,13 @@
                                     <%
                                 } else if (blank) {
                                     %>
-                                        <div class="date-box date-blank th-six"></div>
+                                        <div class="dateBox dateBlank th-six"></div>
                                     <%
                                 }
                             } else {
                                 if (monthDate) {
                                     %>
-                                        <div class="date-box date today">
+                                        <div class="dateBox date today">
                                             <div class="in-date">
                                                 <%=todayDate%>
                                                 <%
@@ -176,7 +176,7 @@
                                     <%
                                 } else if (blank) {
                                     %>
-                                        <div class="date-box date-blank"></div>
+                                        <div class="dateBox dateBlank"></div>
                                     <%
                                 }
                             }
@@ -184,7 +184,7 @@
                             if (sunday) {
                                 if (monthDate) {
                                     %>
-                                        <div class="date-box date th-seven">
+                                        <div class="dateBox date th-seven">
                                             <div class="in-date">
                                                 <%=date%>
                                                 <%
@@ -207,13 +207,13 @@
                                     <%
                                 } else if (blank) {
                                     %>
-                                        <div class="date-box date-blank th-seven"></div>
+                                        <div class="dateBox dateBlank th-seven"></div>
                                     <%
                                 }
                             } else if (saturday) {
                                 if (monthDate) {
                                     %>
-                                        <div class="date-box date th-six">
+                                        <div class="dateBox date th-six">
                                             <div class="in-date">
                                                 <%=date%>
                                                 <%
@@ -236,13 +236,13 @@
                                     <%
                                 } else if (blank) {
                                     %>
-                                        <div class="date-box date-blank th-six"></div>
+                                        <div class="dateBox dateBlank th-six"></div>
                                     <%
                                 }
                             } else {
                                 if (monthDate) {
                                     %>
-                                        <div class="date-box date">
+                                        <div class="dateBox date">
                                             <div class="in-date">
                                                 <%=date%>
                                                 <%
@@ -265,7 +265,7 @@
                                     <%
                                 } else if (blank) {
                                     %>
-                                        <div class="date-box date-blank"></div>
+                                        <div class="dateBox dateBlank"></div>
                                     <%
                                 }
                             }
@@ -285,7 +285,5 @@
     // DB자원 반납
     diaryExtractStmt.close();
     diaryExtractRs.close();
-    sessionCheckRs.close();
-    sessionCheckStmt.close();
-    sessionCheckConn.close();
+    jdbcConn.close();
 %>

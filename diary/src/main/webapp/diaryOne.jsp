@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../include/sessionCheck.jsp"%>
+<%@ include file="../include/loginOn.jsp"%>
+<%@ include file="../include/jdbcConn.jsp"%>
 <%@ include file="../include/fonts.jsp"%>
 
 <%
@@ -10,7 +11,7 @@
     
     String diaryOneSQL = "SELECT diary_date, feeling, title, weather, content, update_date, create_date FROM diary_content WHERE diary_date = ?";
     
-    diaryOneStmt = sessionCheckConn.prepareStatement(diaryOneSQL);
+    diaryOneStmt = jdbcConn.prepareStatement(diaryOneSQL);
     diaryOneStmt.setString(1, diaryDate);
     diaryOneRs = diaryOneStmt.executeQuery();
 %>
@@ -105,7 +106,5 @@
     // DB자원 반납
     diaryOneRs.close();
     diaryOneStmt.close();
-    sessionCheckRs.close();
-    sessionCheckStmt.close();
-    sessionCheckConn.close();
+    jdbcConn.close();
 %>

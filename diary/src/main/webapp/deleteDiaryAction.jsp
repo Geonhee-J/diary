@@ -1,17 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../include/sessionCheck.jsp"%>
+<%@ include file="../include/loginOn.jsp"%>
+<%@ include file="../include/jdbcConn.jsp"%>
 
 <%
-    // diaryOne에서 전달되는 값 담기
     String diaryDate = request.getParameter("diaryDate");
-    // System.out.println("<addDiaryAction.jsp> diaryDate : " + diaryDate);
 %>
 
 <%
     String deleteDiarySQL = "DELETE FROM diary_content WHERE diary_date = ?";
     
     PreparedStatement deleteDiaryStmt = null;
-    deleteDiaryStmt = sessionCheckConn.prepareStatement(deleteDiarySQL);
+    deleteDiaryStmt = jdbcConn.prepareStatement(deleteDiarySQL);
     deleteDiaryStmt.setString(1, diaryDate);
     
     int result = deleteDiaryStmt.executeUpdate();
@@ -24,7 +23,5 @@
     }
     
     deleteDiaryStmt.close();
-    sessionCheckRs.close();
-    sessionCheckStmt.close();
-    sessionCheckConn.close();
+    jdbcConn.close();
 %>

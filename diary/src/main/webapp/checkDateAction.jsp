@@ -1,18 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../include/sessionCheck.jsp"%>
+<%@ include file="../include/loginOn.jsp"%>
+<%@ include file="../include/jdbcConn.jsp"%>
 
 <%
-    // diaryCalendar에서 전달되는 값 담기
     String checkDate = request.getParameter("checkDate");
     System.out.println("<checkDateAction.jsp> checkDate : " + checkDate);
     
     PreparedStatement checkDateStmt = null;
     ResultSet checkDateRs = null;
     
-    // diary_content의 diary_date 값을 불러 올 sql문
     String checkDateSQL = "SELECT diary_date FROM diary_content WHERE diary_date = ?";
     
-    checkDateStmt = sessionCheckConn.prepareStatement(checkDateSQL);
+    checkDateStmt = jdbcConn.prepareStatement(checkDateSQL);
     checkDateStmt.setString(1, checkDate);
     checkDateRs = checkDateStmt.executeQuery();
     
@@ -26,7 +25,5 @@
     
     checkDateRs.close();
     checkDateStmt.close();
-    sessionCheckRs.close();
-    sessionCheckStmt.close();
-    sessionCheckConn.close();
+    jdbcConn.close();
 %>
