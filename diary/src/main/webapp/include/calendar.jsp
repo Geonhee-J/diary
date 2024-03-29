@@ -24,6 +24,7 @@
     
     int tYear = target.get(Calendar.YEAR);
     int tMonth = target.get(Calendar.MONTH);
+    int tDay = now.get(Calendar.DATE);
     // System.out.println("calendar tYear : " + tYear);
     // System.out.println("calendar tMonth : " + tMonth);
     

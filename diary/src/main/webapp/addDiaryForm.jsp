@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../include/loginOn.jsp"%>
+<%@ include file="../include/calendar.jsp"%>
 <%@ include file="../include/fonts.jsp"%>
 
 <%
@@ -31,6 +32,40 @@
     <link rel="stylesheet" href="/diary/css/addDiaryForm.css">
 </head>
 <body>
+    <header>
+        <div class="header-calendar">
+            <div class="calendar-yymm">
+                <%=tYear%>년
+                <%=tMonth + 1%>월
+                <%=tDay%>일
+            </div>
+        </div>
+        <div class="header-btn">
+            <form method="post" action="/diary/addDiaryForm.jsp">
+                <button class="common-btn" type="submit">일기쓰기</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/diaryCalendar.jsp">
+                <button class="common-btn" type="submit">달력으로보기</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/diaryList.jsp">
+                <button class="common-btn" type="submit">리스트로보기</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/lunchOne.jsp">
+                <button class="common-btn" type="submit">점심메뉴선택</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/statsLunch.jsp">
+                <button class="common-btn" type="submit">점심메뉴보기</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/include/logout.jsp">
+                <button class="common-btn" type="submit">로그아웃</button>
+            </form>
+        </div>
+    </header>
     <div class="container">
         <div class="addDiaryBox">
             <div class="checkDateInputBox">
