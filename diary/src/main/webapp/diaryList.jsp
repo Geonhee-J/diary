@@ -24,8 +24,7 @@
 %>
 
 <%
-    String searchSQL =
-            "SELECT diary_date diaryDate, month(diary_date) month, day(diary_date) day, feeling, title FROM diary_content WHERE title LIKE ? ORDER BY diary_date desc LIMIT ?, ?";
+    String searchSQL = "SELECT diary_date diaryDate, month(diary_date) month, day(diary_date) day, feeling, title FROM diary_content WHERE title LIKE ? ORDER BY diary_date desc LIMIT ?, ?";
     
     PreparedStatement searchStmt = null;
     ResultSet searchRs = null;
@@ -62,90 +61,106 @@
     <link rel="stylesheet" href="/diary/css/diaryList.css">
 </head>
 <body>
-    <div class="container">
-        <div class="btnGroup">
-            <div class="actionBtn">
-                <form method="post" action="/diary/logoutAction.jsp">
-                    <input type="hidden" name="logout" value="true">
-                    <button class="logoutBtn" type="submit">LOGOUT</button>
-                </form>
-                <form method="post" action="/diary/addDiaryForm.jsp">
-                    <button type="submit">WRITING DIARY</button>
-                </form>
-            </div>
-            <div class="modeBtn">
-                <form method="post" action="/diary/diaryCalendar.jsp">
-                    <button type="submit">DIARY VIEW</button>
-                </form>
-                <form method="post" action="/diary/diaryList.jsp">
-                    <button class="logoutBtn" type="submit">BOARD VIEW</button>
-                </form>
-            </div>
-        </div>
-        <div class="diary-title-box">
-            <div class="diary-title">
+    <header>
+        <div class="header-calendar">
+            <div class="calendar-yymm">
                 <%=tYear%>년
                 <%=tMonth + 1%>월
             </div>
+            <div class="calendar-btn">
+                <a href="/diary/diaryList.jsp?targetYear=<%=tYear%>&targetMonth=<%=tMonth - 1%>">이전 달</a>
+                <div class="header-btn-column"></div>
+                <a href="/diary/diaryList.jsp?targetYear=<%=tYear%>&targetMonth=<%=tMonth + 1%>">다음 달</a>
+            </div>
         </div>
-        <div class="diaryBox">
-            <div class="diaryListContentBox">
-                <%
-                    while (searchRs.next()) {
-                        String month = searchRs.getString("month");
-                        String day = searchRs.getString("day");
-                        String feeling = searchRs.getString("feeling");
-                        String title = searchRs.getString("title");
-                        String diaryDate = searchRs.getString("diaryDate");
-                %>
-                        <div class="diaryListContent">
-                            <div class="contentDate"><%=month%>월
-                                <%=day%>일
+        <div class="header-btn">
+            <form method="post" action="/diary/addDiaryForm.jsp">
+                <button class="common-btn" type="submit">일기쓰기</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/diaryCalendar.jsp">
+                <button class="common-btn" type="submit">달력으로보기</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/diaryList.jsp">
+                <button class="common-btn" type="submit">리스트로보기</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/lunchOne.jsp">
+                <button class="common-btn" type="submit">점심메뉴선택</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/statsLunch.jsp">
+                <button class="common-btn" type="submit">점심메뉴보기</button>
+            </form>
+            <div class="header-btn-column"></div>
+            <form method="post" action="/diary/include/logout.jsp">
+                <button class="common-btn" type="submit">로그아웃</button>
+            </form>
+        </div>
+    </header>
+    <div class="container">
+        <div class="list-container">
+            <div class="list-wrap">
+                <div class="list-search-wrap">
+                    <form method="get" action="/diary/diaryList.jsp">
+                        <input class="list-search-input" type="text" name="searchWord" placeholder="제목 검색" value="<%=searchWord%>">
+                        <div>
+                            <button class="search-btn" type="submit">검색</button>
+                            <button class="search-btn reset-btn" type="submit">초기화</button>
+                        </div>
+                    </form>
+                </div>
+                <table class="list-content-wrap">
+                    <tr>
+                        <th>제목</th>
+                        <th>기분</th>
+                        <th>날짜</th>
+                    </tr>
+                    <%
+                        while (searchRs.next()) {
+                            String diaryDate = searchRs.getString("diaryDate");
+                    %>
+                            <tr>
+                                <td class="list-content-title">
+                                    <span><a href="/diary/diaryOne.jsp?diaryDate=<%=diaryDate%>"><%=searchRs.getString("title")%></a></span>
+                                </td>
+                                <td class="list-content-feeling">
+                                    <span class="list-content-feeling"><%=searchRs.getString("feeling")%></span>
+                                </td>
+                                <td class="list-content-date">
+                                    <span><%=searchRs.getString("month")%>월</span>
+                                    <span><%=searchRs.getString("day")%>일</span>
+                                </td>
+                            </tr>
+                    <%
+                        }
+                    %>
+                </table>
+                <div class="list-page-btn-wrap">
+                    <%
+                        if (currentPage > 1) {
+                    %>
+                            <div class="list-page-btn">
+                                <a href="./diaryList.jsp">처음페이지</a>
                             </div>
-                            <div>
-                                <span class="feeling"><%=feeling%></span>
+                            <div class="list-page-btn">
+                                <a href="./diaryList.jsp?currentPage=<%=currentPage - 1%>">이전페이지</a>
                             </div>
-                            <div class="contentTitle">
-                                <a href="/diary/diaryOne.jsp?diaryDate=<%=diaryDate%>"> <%=title%>
-                                </a>
+                    <%
+                        }
+                        if (currentPage < lastPage) {
+                    %>
+                            <div class="list-page-btn">
+                                <a href="./diaryList.jsp?currentPage=<%=currentPage + 1%>">다음페이지</a>
                             </div>
-                        </div>
-                <%
-                    }
-                %>
-            </div>
-            <div class="diaryListPaging">
-                <%
-                    if (currentPage > 1) {
-                %>
-                        <div class="pagingBtn">
-                            <a href="./diaryList.jsp">처음페이지</a>
-                        </div>
-                        <div class="pagingBtn">
-                            <a href="./diaryList.jsp?currentPage=<%=currentPage - 1%>">이전페이지</a>
-                        </div>
-                <%
-                    }
-                    if (currentPage < lastPage) {
-                %>
-                        <div class="pagingBtn">
-                            <a href="./diaryList.jsp?currentPage=<%=currentPage + 1%>">다음페이지</a>
-                        </div>
-                        <div class="pagingBtn">
-                            <a href="./diaryList.jsp?currentPage=<%=lastPage%>">마지막페이지</a>
-                        </div>
-                <%
-                    }
-                %>
-            </div>
-            <div class="searchInput">
-                <form method="get" action="/diary/diaryList.jsp">
-                    <input type="text" name="searchWord" placeholder="Search for a title" value="<%=searchWord%>">
-                    <div class="searchBtnGroup">
-                        <button class="resetButton" type="submit">초기화</button>
-                        <button class="searchButton" type="submit">검색</button>
-                    </div>
-                </form>
+                            <div class="list-page-btn">
+                                <a href="./diaryList.jsp?currentPage=<%=lastPage%>">마지막페이지</a>
+                            </div>
+                    <%
+                        }
+                    %>
+                </div>
             </div>
         </div>
     </div>

@@ -8,7 +8,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
     width: 100vw;
 }
 
@@ -16,17 +15,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.calendar-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 15px;
-}
-
-.calendar-btn a {
-    color: rgba(255, 255, 255, 0.7);
 }
 
 .day {
@@ -51,12 +39,19 @@
     padding: 10px;
 }
 
+.date {
+    background-color: rgba(174, 208, 156, 0.8);
+}
+
 .blank-date {
     background-color: rgba(174, 208, 156, 0.4);
 }
 
-.date {
-    background-color: rgba(174, 208, 156, 0.8);
+.in-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .sunday {
@@ -66,13 +61,6 @@
 
 .saturday {
     color: #0000FF;
-}
-
-.in-date {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
 
 .today {

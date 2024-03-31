@@ -1,175 +1,180 @@
 @charset "UTF-8";
 @import url("/diary/css/common.css");
 
-.diaryOneBox {
+.diary-one-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    width: 100vw;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.diaryOneContentBox {
+.diary-one-wrap {
+    width: 400px;
+}
+
+.diary-one-btn-wrap {
+    width:inherit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.diary-one-btn {
+    width: 54px;
+    height: 26px;
+    font-size: 14px;
+    background-color: rgba(174, 208, 156, 1);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 4px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+
+.diary-one-btn:hover {
+    background-color: rgba(134, 195, 93, 1);
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color : rgba(230, 230, 230, 0.7);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.delete-btn:hover {
+    background-color : rgba(230, 230, 230, 1);
+    cursor: pointer;
+}
+
+.diary-article-wrap {
+    width:inherit;
+    border-top: 1px solid rgba(174, 208, 156, 1);
+    border-bottom: 1px solid rgba(174, 208, 156, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.diaryOneCommentBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.diaryOneTableName {
-    display: flex;
-}
-
-.diaryOneColumn {
-    height: 36px;
-    border-left: 1px solid rgba( 230, 230, 230, 0.8);
-    margin: 0px 10px 0px 10px;
-}
-
-.diaryOneRow {
-    width: 284px;
-    border-bottom: 1px solid rgba( 230, 230, 230, 0.8);
-    margin: 10px 0px 10px 0px;
-}
-
-
-.diaryOne {
-    width: 284px;
-    height: 16px;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba( 230, 230, 230, 1);
-    border-radius: 20px;
-    margin-bottom: 10px;
-    padding: 16px;
-    
+.diary-article {
+    width: 388px;
+    height: 18px;
+    border-top: 1px solid rgba(174, 208, 156, 0.3);
+    border-bottom: 1px solid rgba(174, 208, 156, 0.3);
     display: flex;
     align-items: center;
-    justify-content: start;
+    padding: 6px;
 }
 
-.feeling {
-    font-size: 22px;
-}
-
-.diaryOneContent {
-    width: 284px;
-    height: 284px;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba( 230, 230, 230, 1);
-    border-radius: 20px;
-    margin-bottom: 10px;
-    padding: 10px 16px 16px 16px;
-    
+.diary-article-content {
+    width: 352px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: start;
+    padding: 6px;
 }
 
-.diaryOneComment textarea {
-    width: 284px;
-    height: 28px;
-    font-size: 14px;
+.diary-comment-wrap {
+    width:inherit;
+}
+
+.article-column-line {
+    height: 30px;
+    border-left: 1px solid rgba(174, 208, 156, 0.5);
+    margin-right: 20px;
+}
+
+.article-row-line {
+    width: 400px;
+    border-bottom: 1px solid rgba( 230, 230, 230, 0.8);
+}
+
+.diary-article-column {
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diary-comment-wrap {
+    width: inherit;
+}
+
+.diary-memo-wrap {
+    width: 410px;
+    height: 180px;
+    margin-top: 5px;
+    overflow-y: auto;
+}
+
+.diary-comment-input {
+    height: 100px;
+}
+
+.diary-comment-input textarea {
+    width: 368px;
+    height: inherit;
     color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba( 230, 230, 230, 1);
-    border-radius: 20px;
+    border-top: 1px solid rgba(174, 208, 156, 0.3);
+    border-bottom: 1px solid rgba(174, 208, 156, 1);
     padding: 16px;
-    resize: none;
 }
 
-.diaryOneCommentOne {
-    width: 284px;
-    height: 60px;
+.diary-comment-btn {
+    width: inherit;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-btn {
+    width: 100px;
+    height: 30px;
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba( 230, 230, 230, 1);
-    border-radius: 20px;
-    padding: 16px;
-    margin-bottom: 10px;
+    background-color: transparent;
 }
 
-.commentOneHeader {
+.comment-btn:hover {
+    background-color: rgba(174, 208, 156, 0.5);
+    cursor: pointer;
+}
+
+.diary-comment-memo {
+    width: 376px;
+    background-color: rgba(174, 208, 156, 0.8);
+    margin-top: 8px;
+    padding: 16px 8px 16px 16px;
+}
+
+.memo-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 8px;
 }
 
-.commentOneHeader button {
-    width: 40px;
-    height: 18px;
-    font-size: 10px;
-    color: rgba(0, 0, 0, 0.7);
-    border: none;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.memo-delete-btn {
+    width: 60px;
+    background-color: transparent;
 }
 
-.diaryOneBtnBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.memo {
+    width: inherit;
 }
 
-.diaryOneBtnBox button {
-    width: 155px;
-    height: 40px;
-    font-size: 16px;
-    border-radius: 20px;
-    border: none;
-    margin: 10px 5px 10px 5px;
+.diary-memo-wrap::-webkit-scrollbar {
+    width: 6px;
 }
 
-.diaryOneCommentBtnBox button {
-    height: 40px;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    padding: 16px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.diary-memo-wrap::-webkit-scrollbar-thumb {
+    background-color: rgba(134, 195, 93, 0.8);
+    border-radius: 2px;
 }
 
-.diaryOneActionBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.diaryOneEditBtn button {
-    background-color: rgba(174, 208, 156, 1);
-    color: #FFFFFF;
-}
-
-.diaryOneDeleteBtn button {
-    background-color: rgba(230, 230, 230, 0.5);
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.diaryOneBackBtn button {
-    width: 316px;
-    background-color: rgba(230, 230, 230, 0.5);
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.diaryOneCommentBtn button {
-    width: 316px;
-    background-color: rgba(174, 208, 156, 1);
-    color: #FFFFFF;
+.diary-memo-wrap::-webkit-scrollbar-track {
+    background-color: rgba(174, 208, 156, 0.5);
 }
