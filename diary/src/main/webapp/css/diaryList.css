@@ -46,7 +46,7 @@
     width: 70px;
     height: 30px;
     font-size: 16px;
-    background-color: rgba(174, 208, 156, 1);
+    background-color: rgba(174, 208, 156, 0.8);
     color: rgba(255, 255, 255, 1);
     border: none;
     border-radius: 4px;
@@ -54,12 +54,12 @@
 }
 
 .search-btn:hover {
-    background-color: rgba(134, 195, 93, 1);
+    background-color: rgba(174, 208, 156, 1);
     cursor: pointer;
 }
 
 .reset-btn {
-    background-color : rgba(230, 230, 230, 0.7);
+    background-color : rgba(230, 230, 230, 0.5);
     color: rgba(0, 0, 0, 0.5);
 }
 
