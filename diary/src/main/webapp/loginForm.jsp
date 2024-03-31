@@ -15,39 +15,39 @@
 </head>
 <body>
     <div class="container">
-        <div class="loginBox">
-            <div class="messageBox">
+        <div class="login-container">
+            <div class="meesage-wrap">
                 <%
                     if (errMsg != null) {
                 %>
-                        <div class="message"><%=errMsg%></div>
+                        <div class="message-content"><%=errMsg%></div>
                 <%
                     } else {
                 %>
-                        <div class="message">My Diary</div>
+                        <div class="message-content">나 혼자만 일기장</div>
                 <%
                     }
                 %>
             </div>
-            <div class="loginInputBox">
+            <div class="login-input-wrap">
                 <form method="post" action="/diary/loginAction.jsp">
-                    <div class="loginInput">
-                        <input type="text" name="loginId" placeholder="ID">
+                    <div class="login-input">
+                        <input type="text" name="loginId" placeholder="계정">
                     </div>
-                    <div class="loginInput">
-                        <input type="password" name="loginPw" placeholder="PASSWORD">
+                    <div class="login-input">
+                        <input type="password" name="loginPw" placeholder="암호">
                     </div>
-                    <div class="loginInput">
-                        <button type="submit">Sign in</button>
+                    <div class="login-input">
+                        <button type="submit">접속</button>
                     </div>
                 </form>
             </div>
-            <div class="signUpBox">
-                <div class="signUpMessage">
-                    <span>Don't have an account?</span>
+            <div class="sign-up-wrap">
+                <div class="sign-up-message">
+                    <span>계정이 없으신가요?</span>
                 </div>
-                <div class="signUpNew">
-                    <span>Sign Up new</span>
+                <div class="sing-up-new">
+                    <span>새로 만들기</span>
                 </div>
             </div>
         </div>

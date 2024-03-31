@@ -32,7 +32,7 @@
 /* 헤더 */
 
 header {
-    height: 60px;
+    height: 48px;
     position: sticky;
     background-color: rgba(134, 195, 93, 1);
     display: flex;
@@ -50,6 +50,17 @@ header {
     color: rgba(0, 0, 0, 0.7);
     font-size: 24px;
     font-weight: 500;
+}
+
+.calendar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+}
+
+.calendar-btn a {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* 정렬 */
@@ -96,6 +107,11 @@ radio:focus {
     outline: none;
 }
 
+input::placeholder,
+textarea::placeholder {
+    font-size: 14px;
+}
+
 select {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -105,4 +121,10 @@ select {
 a {
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
+}
+
+/* 테이 */
+
+table, tr, th, td {
+    border-spacing: 0px;
 }

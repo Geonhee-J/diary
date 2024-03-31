@@ -1,139 +1,138 @@
 @charset "UTF-8";
 @import url("/diary/css/common.css");
 
-.addDiaryBox {
+.add-diary-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100vw;
 }
 
-.messageBox {
-    display: flex;
-    width: 316px;
-    height: 30px;
-    margin-bottom: 20px;
-}
-
-.message {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 316px;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.checkDateInputBox {
+.add-diary-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.checkDateInput input {
-    width: 284px;
-    height: 40px;
+.checkdate-container {
+    width: 300px;
+    margin-bottom: 5px;
+}
+
+.checkdate-message-wrap {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkdate-message {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.checkdate-input-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkdate-input {
+    width: 180px;
+    height: 30px;
+    font-size: 16px;
+    background-color : rgba( 230, 230, 230, 0.5);
+    color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.add-diary-input-font {
     font-size: 16px;
     color: rgba(0, 0, 0, 0.7);
-    background-color : rgba( 230, 230, 230, 0.5);
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    padding-left: 16px;
-    padding-right: 16px;
 }
 
-.checkDateInput button {
-    width: 316px;
-    height: 40px;
-    font-size: 16px;
-    background-color: rgba(174, 208, 156, 1);
-    color: #FFFFFF;
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-.addDiaryInputMood {
+.input-container {
     width: 300px;
-    height: 40px;
-    background-color : rgba( 230, 230, 230, 0.5);
-    border: none;
-    border-radius: 20px;
-    margin: 7px 0;
-    padding-left: 16px;
-    display:flex;
-    align-items: center;
-    justify-content: start;
 }
 
-.moodLabel {
+.input-style input, select, textarea {
+    background-color : rgba( 230, 230, 230, 0.5);
+    border: none;
+    border-radius: 15px;
+    margin: 5px 0;
+}
+
+.input-style input {
+    width: 280px;
+    height: 30px;
+    padding-left: 20px;
+}
+
+.input-style select {
+    width: 300px;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.5);
+    padding-left: 20px;
+}
+
+.input-style textarea {
+    width: 260px;
+    height: 180px;
+    resize: none;
+    padding: 10px 20px;
+}
+
+.input-feeling-style {
+    width: 280px;
+    height: 30px;
+    background-color : rgba( 230, 230, 230, 0.5);
+    border: none;
+    border-radius: 15px;
+    margin: 5px 0;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.feeling-label {
+    width: 40px;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.5);
-    margin-right: 25px;
 }
 
-.addDiaryInput input {
-    width: 300px;
-    height: 40px;
+.feeling-input {
+    width: 220px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.feeling-input div {
+    display: flex;
+    align-items: center;
+}
+
+.feeling-input div > label {
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+.add-diary-btn {
+    width: 80px;
+    height: 30px;
     font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-    background-color : rgba( 230, 230, 230, 0.5);
+    background-color: rgba(174, 208, 156, 0.8);
+    color: rgba(255, 255, 255, 1);
     border: none;
-    border-radius: 20px;
-    margin: 7px 0;
-    padding-left: 16px;
+    border-radius: 15px;
 }
 
-.addDiaryInput textarea {
-    width: 284px;
-    height: 300px;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-    background-color : rgba( 230, 230, 230, 0.5);
-    border: none;
-    border-radius: 20px;
-    margin: 7px 0;
-    padding: 16px;
-    resize: none;
-}
-
-.addDiaryInput select {
-    width: 316px;
-    height: 40px;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-    background-color : rgba( 230, 230, 230, 0.5);
-    border: none;
-    border-radius: 20px;
-    margin: 7px 0;
-    padding-left: 16px;
-}
-
-.addDiaryInput input::placeholder,
-.addDiaryInput textarea::placeholder {
-    font-size: 14px;
-}
-
-.addDiaryInput button {
-    width: 316px;
-    height: 40px;
-    font-size: 16px;
+.add-diary-btn:hover {
     background-color: rgba(174, 208, 156, 1);
-    color: #FFFFFF;
-    border: none;
-    border-radius: 20px;
-    margin: 10px 0;
-}
-
-.prevBtn button {
-    width: 316px;
-    height: 40px;
-    font-size: 16px;
-    background-color: rgba(230, 230, 230, 0.5);
-    color: rgba(0, 0, 0, 0.7);
-    border: none;
-    border-radius: 20px;
-    margin-top: 10px;
+    cursor: pointer;
 }
