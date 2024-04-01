@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("/diary/css/common.css");
 
-.add-diary-container {
+.lunch-one-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9,7 +9,7 @@
     width: 100vw;
 }
 
-.add-diary-wrap {
+.lunch-one-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,8 +22,17 @@
 }
 
 .checkdate-message-wrap {
-    height: 50px;
+    height: 80px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkdate-message-box {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -51,78 +60,7 @@
     padding-right: 10px;
 }
 
-.add-diary-input-font {
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.input-container {
-    width: 300px;
-}
-
-.input-style input, select, textarea {
-    background-color : rgba( 230, 230, 230, 0.5);
-    border: none;
-    border-radius: 15px;
-    margin: 5px 0;
-}
-
-.input-style input {
-    width: 280px;
-    height: 30px;
-    padding-left: 20px;
-}
-
-.input-style select {
-    width: 300px;
-    height: 30px;
-    color: rgba(0, 0, 0, 0.5);
-    padding-left: 20px;
-}
-
-.input-style textarea {
-    width: 260px;
-    height: 180px;
-    resize: none;
-    padding: 10px 20px;
-}
-
-.input-feeling-style {
-    width: 280px;
-    height: 30px;
-    background-color : rgba( 230, 230, 230, 0.5);
-    border: none;
-    border-radius: 15px;
-    margin: 5px 0;
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.feeling-label {
-    width: 40px;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.feeling-input {
-    width: 220px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.feeling-input div {
-    display: flex;
-    align-items: center;
-}
-
-.feeling-input div > label {
-    font-size: 18px;
-    margin-right: 2px;
-}
-
-.add-diary-btn {
+.lunch-one-diary-btn {
     width: 80px;
     height: 30px;
     font-size: 16px;
@@ -132,7 +70,43 @@
     border-radius: 15px;
 }
 
-.add-diary-btn:hover {
+.lunch-one-diary-btn:hover {
+    background-color: rgba(134, 195, 93, 1);
+    cursor: pointer;
+}
+
+.input-container {
+    width: 300px;
+}
+
+.input-style {
+    background-color: rgba( 230, 230, 230, 0.5);
+    border: none;
+    border-radius: 15px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.menu-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slect-diary-btn {
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    background-color: rgba(174, 208, 156, 0.8);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 15px;
+    margin-top: 5px;
+}
+
+.slect-diary-btn:hover {
     background-color: rgba(134, 195, 93, 1);
     cursor: pointer;
 }

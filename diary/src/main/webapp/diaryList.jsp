@@ -67,11 +67,6 @@
                 <%=tYear%>년
                 <%=tMonth + 1%>월
             </div>
-            <div class="calendar-btn">
-                <a href="/diary/diaryList.jsp?targetYear=<%=tYear%>&targetMonth=<%=tMonth - 1%>">이전 달</a>
-                <div class="header-btn-column"></div>
-                <a href="/diary/diaryList.jsp?targetYear=<%=tYear%>&targetMonth=<%=tMonth + 1%>">다음 달</a>
-            </div>
         </div>
         <div class="header-btn">
             <form method="post" action="/diary/addDiaryForm.jsp">
@@ -105,10 +100,7 @@
                 <div class="list-search-wrap">
                     <form method="get" action="/diary/diaryList.jsp">
                         <input class="list-search-input" type="text" name="searchWord" placeholder="제목 검색" value="<%=searchWord%>">
-                        <div>
-                            <button class="search-btn" type="submit">검색</button>
-                            <button class="search-btn reset-btn" type="submit">초기화</button>
-                        </div>
+                        <button class="search-btn" type="submit">검색</button>
                     </form>
                 </div>
                 <table class="list-content-wrap">
