@@ -57,7 +57,7 @@
                 <button class="common-btn" type="submit">점심메뉴선택</button>
             </form>
             <div class="header-btn-column"></div>
-            <form method="post" action="/diary/statsLunch.jsp">
+            <form method="post" action="/diary/statsLunch.jsp?year=<%=tYear%>&month=<%=tMonth%>">
                 <button class="common-btn" type="submit">점심메뉴보기</button>
             </form>
             <div class="header-btn-column"></div>

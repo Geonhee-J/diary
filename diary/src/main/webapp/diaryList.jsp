@@ -24,15 +24,17 @@
 %>
 
 <%
-    String searchSQL = "SELECT diary_date diaryDate, month(diary_date) month, day(diary_date) day, feeling, title FROM diary_content WHERE title LIKE ? ORDER BY diary_date desc LIMIT ?, ?";
+    String searchSQL = "SELECT diary_date diaryDate, month(diary_date) month, day(diary_date) day, feeling, title FROM diary_content WHERE year(diary_date) = ? AND month(diary_date) = ? ANd title LIKE ? ORDER BY diary_date desc LIMIT ?, ?";
     
     PreparedStatement searchStmt = null;
     ResultSet searchRs = null;
     
     searchStmt = jdbcConn.prepareStatement(searchSQL);
-    searchStmt.setString(1, "%" + searchWord + "%");
-    searchStmt.setInt(2, startRow);
-    searchStmt.setInt(3, rowPerPage);
+    searchStmt.setInt(1, tYear);
+    searchStmt.setInt(2, tMonth + 1);
+    searchStmt.setString(3, "%" + searchWord + "%");
+    searchStmt.setInt(4, startRow);
+    searchStmt.setInt(5, rowPerPage);
     searchRs = searchStmt.executeQuery();
     
     String totalRowCountSQL = "SELECT count(*) FROM diary_content";
@@ -67,6 +69,11 @@
                 <%=tYear%>년
                 <%=tMonth + 1%>월
             </div>
+            <div class="calendar-btn">
+                <a href="/diary/diaryList.jsp?targetYear=<%=tYear%>&targetMonth=<%=tMonth - 1%>">이전 달</a>
+                <div class="header-btn-column"></div>
+                <a href="/diary/diaryList.jsp?targetYear=<%=tYear%>&targetMonth=<%=tMonth + 1%>">다음 달</a>
+            </div>
         </div>
         <div class="header-btn">
             <form method="post" action="/diary/addDiaryForm.jsp">
@@ -85,7 +92,7 @@
                 <button class="common-btn" type="submit">점심메뉴선택</button>
             </form>
             <div class="header-btn-column"></div>
-            <form method="post" action="/diary/statsLunch.jsp">
+            <form method="post" action="/diary/statsLunch.jsp?year=<%=tYear%>&month=<%=tMonth%>">
                 <button class="common-btn" type="submit">점심메뉴보기</button>
             </form>
             <div class="header-btn-column"></div>
@@ -141,7 +148,7 @@
                             </div>
                     <%
                         }
-                        if (currentPage < lastPage) {
+                            if (currentPage < lastPage) {
                     %>
                             <div class="list-page-btn">
                                 <a href="./diaryList.jsp?currentPage=<%=currentPage + 1%>">다음페이지</a>

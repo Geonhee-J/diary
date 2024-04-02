@@ -64,7 +64,7 @@
                 <button class="common-btn" type="submit">점심메뉴선택</button>
             </form>
             <div class="header-btn-column"></div>
-            <form method="post" action="/diary/statsLunch.jsp">
+            <form method="post" action="/diary/statsLunch.jsp?year=<%=tYear%>&month=<%=tMonth%>">
                 <button class="common-btn" type="submit">점심메뉴보기</button>
             </form>
             <div class="header-btn-column"></div>
@@ -151,7 +151,7 @@
                         </div>
                         <div>
                             <input type="hidden" name="diaryDate" value="<%=checkDate%>">
-                            <button class="slect-diary-btn" type="submit">투표</button>
+                            <button class="select-diary-btn" type="submit">투표</button>
                         </div>
                     </form>
                 </div>
@@ -162,7 +162,7 @@
                     <form method="post" action="/diary/deleteLunchOneAction.jsp">
                         <div>
                             <input type="hidden" name="diaryDate" value="<%=checkDate%>">
-                            <button class="slect-diary-btn" type="submit">삭제</button>
+                            <button class="select-diary-btn" type="submit">삭제</button>
                         </div>
                     </form>
             <%

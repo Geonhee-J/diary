@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@import url("/diary/css/common.css");
+
+.stats-lunch-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+}
+
+.stats-lunch-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lunch-total-cnt-container {
+    width: 400px;
+    margin-bottom: 5px;
+}
+
+.lunch-total-cnt-wrap {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lunch-total-cnt-message-box {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lunch-total-cnt-message {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.stats-wrap {
+    width:inherit;
+    border-top: 1px solid rgba(174, 208, 156, 1);
+    border-bottom: 1px solid rgba(174, 208, 156, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-article {
+    width: inherit;
+    height: 18px;
+    border-top: 1px solid rgba(174, 208, 156, 0.3);
+    border-bottom: 1px solid rgba(174, 208, 156, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.stats-article-column {
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-column-line {
+    height: 30px;
+    border-left: 1px solid rgba(174, 208, 156, 0.5);
+    margin-right: 20px;
+}
